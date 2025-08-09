@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delhi HC Case Fetcher</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Delhi High Court Case Search</h2>
+    <form method="post">
+        {{ csrf_token() }}
+        <label>Case Type:</label>
+        <select name="case_type">
+            <option value="WP(C)">WP(C)</option>
+            <option value="CRL.A.">CRL.A.</option>
+            <option value="FAO">FAO</option>
+        </select><br>
+
+        <label>Case Number:</label>
+        <input type="text" name="case_number" required><br>
+
+        <label>Filing Year:</label>
+        <input type="text" name="filing_year" required><br>
+
+        <button type="submit">Search</button>
+    </form>
+
+    {% if data %}
+        <h3>Case Details</h3>
+        <p><strong>Petitioner:</strong> {{ data.petitioner }}</p>
+        <p><strong>Respondent:</strong> {{ data.respondent }}</p>
+        <p><strong>Filing Date:</strong> {{ data.filing_date }}</p>
+        <p><strong>Next Date:</strong> {{ data.next_date }}</p>
+        <p><a href="{{ data.pdf_link }}" target="_blank">Download Latest Order PDF</a></p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,53 @@
+#  Python 
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+#  Virtual environment 
+venv/
+.env
+.env.*
+
+#  Environment variables 
+*.env
+.envrc
+
+#  IDE / Editor files 
+.vscode/
+.idea/
+*.swp
+*.swo
+
+#  OS generated files 
+.DS_Store
+Thumbs.db
+
+#  Logs 
+*.log
+logs/
+debug.log
+
+#  Byte-compiled / cache 
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+#  pytest / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+#  Playwright / Browser automation 
+playwright/.cache/
+playwright-report/
+test-results/
+
+#  Database / storage 
+*.db
+*.sqlite
+*.sqlite3
