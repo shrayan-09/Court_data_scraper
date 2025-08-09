@@ -47,7 +47,7 @@ python -c "import secrets; print(secrets.token_hex(32))"
 psql -U postgres
 CREATE DATABASE courtfetcher_db;
 CREATE USER court_user WITH PASSWORD 'strongpassword';
-GRANT ALL PRIVILEGES ON DATABASE court_db TO court_user;
+GRANT ALL PRIVILEGES ON DATABASE courtfetcher_db TO court_user;
 \q
 ```
 
@@ -76,16 +76,7 @@ If CAPTCHA ever appears, we plan to:
 - Prompt the user to manually enter the displayed CAPTCHA in a form field
 - Submit it along with the request
 
-This approach stays **legal** and **non-invasive**, respecting court site terms.
-
-
-
-##  Sample `.env` File
-```
-DATABASE_URL=postgresql://court_user:strongpassword@localhost:5432/court_db
-SECRET_KEY=be9c6d3f782f48a78b4f7d8e8f8a9c9a7c0e5c6d4f2e1b7a8c4d9f0a3b5d6e7f
-```
-
+This approach stays legal and non-invasive, respecting court site terms.
 
 
 ##  Item Details
