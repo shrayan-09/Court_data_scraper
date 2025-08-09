@@ -18,14 +18,13 @@ A small Flask web app that allows users to:
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/delhi-hc-case-fetcher.git
-cd delhi-hc-case-fetcher
+git clone https://github.com/yourusername/Court_data_scraper.git
+cd Court_data_scraper
 ```
 
 ### 2. Create Virtual Environment & Install Requirements
 ```bash
 python -m venv venv
-source venv/bin/activate    # Linux/Mac
 venv\Scripts\activate       # Windows
 
 pip install -r requirements.txt
@@ -34,7 +33,7 @@ pip install -r requirements.txt
 ### 3. Set Environment Variables  
 Create a `.env` file in the project root:
 ```
-DATABASE_URL=postgresql://username:password@localhost:5432/court_db
+DATABASE_URL=postgresql://username:password@localhost:5432/courtfetcher_db
 SECRET_KEY=your-very-secure-random-string
 ```
 
@@ -46,16 +45,12 @@ python -c "import secrets; print(secrets.token_hex(32))"
 ### 4. Create PostgreSQL Database
 ```bash
 psql -U postgres
-CREATE DATABASE court_db;
+CREATE DATABASE courtfetcher_db;
 CREATE USER court_user WITH PASSWORD 'strongpassword';
 GRANT ALL PRIVILEGES ON DATABASE court_db TO court_user;
 \q
 ```
 
-If you want to use the **`postgres`** default user instead of creating a new one, just adjust your `.env`:
-```
-DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/court_db
-```
 
 ### 5. Install Playwright Browsers
 ```bash
